@@ -1,0 +1,727 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "employee",
+						"type": "address"
+					}
+				],
+				"name": "AddVerifiedEmployee",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "id",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "employee",
+						"type": "address"
+					}
+				],
+				"name": "ProvisionEmployee",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "id",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					}
+				],
+				"name": "SpendProvision",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "id",
+						"type": "bytes32"
+					}
+				],
+				"name": "UpdateProvision",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "ADDRESSES_PROVIDER",
+				"outputs": [
+					{
+						"internalType": "contract IAddressesProvider",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "APP_ID",
+				"outputs": [
+					{
+						"internalType": "bytes16",
+						"name": "",
+						"type": "bytes16"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "SISMO_CONNECT_LIB_VERSION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "employee",
+						"type": "address"
+					}
+				],
+				"name": "addVerifiedEmployee",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "appId",
+				"outputs": [
+					{
+						"internalType": "bytes16",
+						"name": "",
+						"type": "bytes16"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "isSelectableByUser",
+						"type": "bool"
+					}
+				],
+				"name": "buildSignature",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bytes",
+								"name": "message",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bool",
+								"name": "isSelectableByUser",
+								"type": "bool"
+							},
+							{
+								"internalType": "bytes",
+								"name": "extraData",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct SignatureRequest",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "message",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "extraData",
+						"type": "bytes"
+					}
+				],
+				"name": "buildSignature",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bytes",
+								"name": "message",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bool",
+								"name": "isSelectableByUser",
+								"type": "bool"
+							},
+							{
+								"internalType": "bytes",
+								"name": "extraData",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct SignatureRequest",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "isSelectableByUser",
+						"type": "bool"
+					},
+					{
+						"internalType": "bytes",
+						"name": "extraData",
+						"type": "bytes"
+					}
+				],
+				"name": "buildSignature",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bytes",
+								"name": "message",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bool",
+								"name": "isSelectableByUser",
+								"type": "bool"
+							},
+							{
+								"internalType": "bytes",
+								"name": "extraData",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct SignatureRequest",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "message",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bool",
+						"name": "isSelectableByUser",
+						"type": "bool"
+					},
+					{
+						"internalType": "bytes",
+						"name": "extraData",
+						"type": "bytes"
+					}
+				],
+				"name": "buildSignature",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bytes",
+								"name": "message",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bool",
+								"name": "isSelectableByUser",
+								"type": "bool"
+							},
+							{
+								"internalType": "bytes",
+								"name": "extraData",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct SignatureRequest",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "employeeRailgunAddr",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_token",
+						"type": "address"
+					}
+				],
+				"name": "getProvisionId",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "isVerifiedEmployee",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "railgunAddr",
+						"type": "string"
+					}
+				],
+				"name": "provideRailgunAddr",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_employee",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_expiry",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address[]",
+						"name": "_allowlist",
+						"type": "address[]"
+					}
+				],
+				"name": "provisionEmployee",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_recipient",
+						"type": "address"
+					}
+				],
+				"name": "spendProvision",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_provisionId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_expiry",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address[]",
+						"name": "_allowlist",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "_denylist",
+						"type": "address[]"
+					}
+				],
+				"name": "updateProvision",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "verifiedEmployees",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/EmployerScroll.sol": "Employer"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": [
+			":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+			":ds-test/=lib/forge-std/lib/ds-test/src/",
+			":forge-std/=lib/forge-std/src/",
+			":sismo-connect-onchain-verifier/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/",
+			":sismo-connect-solidity/=lib/sismo-connect-packages/packages/sismo-connect-solidity/src/"
+		]
+	},
+	"sources": {
+		"lib/openzeppelin-contracts/contracts/access/Ownable.sol": {
+			"keccak256": "0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2",
+				"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y"
+			]
+		},
+		"lib/openzeppelin-contracts/contracts/interfaces/IERC20.sol": {
+			"keccak256": "0x6ebf1944ab804b8660eb6fc52f9fe84588cee01c2566a69023e59497e7d27f45",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2900536cdadec954ced8789a9d1ed4b5e640029e1424e91fd5b88026486f4d45",
+				"dweb:/ipfs/QmUMUX7CuYoiHvFkhifqtXGaciw2wnm4t9sAoPzETZ3Gbq"
+			]
+		},
+		"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34",
+				"dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr"
+			]
+		},
+		"lib/openzeppelin-contracts/contracts/utils/Context.sol": {
+			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+			]
+		},
+		"lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/interfaces/ISismoConnectVerifier.sol": {
+			"keccak256": "0xa76e685b90c0ec1748bfc7568f3234ed5f0e1f053501a47124956fee129bbc5d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://efed9af69af3422d916a8c95e9ed405992c3142a92e9a3cb4e607d333cc32d5a",
+				"dweb:/ipfs/Qme7FfoLLNHWT5cL7iDXaEUFmnsXRMwRXjtoq4LF9hkNtZ"
+			]
+		},
+		"lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/sismo-connect/SismoConnectLib.sol": {
+			"keccak256": "0x5b1f1b220b6a879e4794f6ab54e90b79d84448b6ae282c3b2b249b42a941c575",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1b989b364009f88a2ddb758ebaaadf893fe79f4df7959fcebd0abda8d95ffdfe",
+				"dweb:/ipfs/QmSbwQQHVEKZuT25uiRVWs9WtEC8We6xthoKQHpvmuwPAp"
+			]
+		},
+		"lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/utils/AuthRequestBuilder.sol": {
+			"keccak256": "0x9b4fdfd005815eeb1005dd5fda5965c468dd01cdb1776ca343fb6229d199096a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c9d5e050d3f3ea434dac6ba9f669c1ba12270ce5c8ef42a8bb4230ad69d36c1b",
+				"dweb:/ipfs/QmNmY22T8dxryQ6fPdEodcqBhTXdTh51zV9wUzUPpeJH5N"
+			]
+		},
+		"lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/utils/ClaimRequestBuilder.sol": {
+			"keccak256": "0x0057d68d58ac241cb3a58b849d7431091343423b1ec335caa4d28f5776d78ec6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e982d28a1755b8fdd48423a3eac9ed69f2f5bb603ef2a09cbab6766e41b24442",
+				"dweb:/ipfs/QmNVdS4BtpNJMxYRNqDB6JreaW5uQaBEyTR4BDkL7DVNdz"
+			]
+		},
+		"lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/utils/RequestBuilder.sol": {
+			"keccak256": "0xa8ebab473db1186a9118d5c6d498fac44d3dd05cfe3a2443cfdf4041236c7ac1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f731db479a72e6d7eda58736cf95e6d5da7dc3990714bd01a70252d0f30003a5",
+				"dweb:/ipfs/QmawaTFTdz8RPGpQGj1DUijMUviTdstiLMv84Vn9YRCAC6"
+			]
+		},
+		"lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/utils/SignatureBuilder.sol": {
+			"keccak256": "0x7d7935ef054b8ef2e6a99e1b7e6aa8bab55e4ba7cc55fc74aa2f206d66c56ee6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://67a928e18192e1b98bd81ba3f6eb8cc931d5b77462e62ca038fbe2bfa11df8b2",
+				"dweb:/ipfs/QmUQFKhHBeNURhdXWfw6M1C1PiFX1eLmCzGnKu7Nur6S5a"
+			]
+		},
+		"lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/utils/SismoConnectHelper.sol": {
+			"keccak256": "0x703ca2c53b3e05ef34a5f1f5b8575267ab20dd20378178403f21ae1d832ba7a7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://de19c6cc0c4d84f070186f6e66eef5ac576bf71aa238966e3968b7d91c4ed679",
+				"dweb:/ipfs/QmWy2hjkPu7QXvDgeHdA23EroyMfw8E773VmxNbeQ19aVw"
+			]
+		},
+		"lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/utils/Structs.sol": {
+			"keccak256": "0x666f7e6c78eb9478790ff290780f11374db0333a9f88914592b25386e924cda3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9bb56d30e78ccb9d121a9f1023244ea2af0877fc9503a3b8db068a50730031fb",
+				"dweb:/ipfs/QmdzfGvxMxf2CCTr5vqV1YP4VvchhczcT1VNeZzqQHKJTP"
+			]
+		},
+		"lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/periphery/interfaces/IAddressesProvider.sol": {
+			"keccak256": "0x7088a8721bb95c4d2ae77db038542e3afccfdb5772a9f6af500098f34514369e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://80cbf6bd03d96a9ef936b00d3cc7041e74e88ae6aa3bd6d8ab5a87a3c1eb7092",
+				"dweb:/ipfs/QmTxXhUhPC9siLtnudFpqtcV1JsJyDULmTV17F1NQdKFy7"
+			]
+		},
+		"lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/verifiers/IHydraS2Verifier.sol": {
+			"keccak256": "0x184f4691fc2b0a8dc77c74e9ebda5be9029b4e6f3aee396b95fa7b41b93d90d3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ddf6deaaa08759d94fb33dd614d8610cec1c13f1b6cf61a46e22e02aace20d1a",
+				"dweb:/ipfs/QmU32LptYUkidVdZNMhnGdvrJxg62c1MG1zWAWQzERJQMG"
+			]
+		},
+		"lib/sismo-connect-packages/packages/sismo-connect-solidity/src/SismoLib.sol": {
+			"keccak256": "0xcacd8c83ca5df7d2562f05aaf299a65bdc2af393065b67cff0dc5f31ea6589b0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1c3e7736338bab098b47788ac36d001c15d4441e344f0a52e012089417c4b134",
+				"dweb:/ipfs/QmfJjb7LQ31o7XdFsE917sZKXYVJTry8npdhSmKo9KywNu"
+			]
+		},
+		"src/EmployerScroll.sol": {
+			"keccak256": "0xa8d7d610607bd63722d852aa3367d76ff771bc0f5cfd115a6e25363d1175a97e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5346b10b167b19ea77fc3894cc6bfcf7756df9d833a28acb01ebb57c562519bd",
+				"dweb:/ipfs/QmeoSqB7ACGEE3C71AVHT5nZuj25NiLMpQjcBDpPCuEmtm"
+			]
+		}
+	},
+	"version": 1
+}
