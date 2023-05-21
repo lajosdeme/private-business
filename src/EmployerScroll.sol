@@ -1,18 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
-import "sismo-connect-solidity/SismoLib.sol";
 import "@openzeppelin/contracts/interfaces/IERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract Employer is SismoConnect, Ownable {
-    using SismoConnectHelper for SismoConnectVerifiedResult;
-
-    bytes16 public constant APP_ID = 0xd345943db0a9c43788a850b039560e05;
-
+contract EmployerScroll is Ownable {
     mapping(address => bool) public verifiedEmployees;
-
-    constructor() SismoConnect(APP_ID) { }
 
     struct EmployeeProvision {
         address token;
